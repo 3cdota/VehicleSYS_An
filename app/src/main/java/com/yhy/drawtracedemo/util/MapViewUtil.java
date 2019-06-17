@@ -166,18 +166,20 @@ public class MapViewUtil {
         //卫星图
         final MapTileProviderBasic tileProviderSat = new MapTileProviderBasic(context);
         String[] baseUrlS = {
-                "http://24.43.4.30:8000/MapTileDownload/googlemaps/satellite_en/"
+//                "http://24.43.4.30:8000/MapTileDownload/googlemaps/satellite_en/"
+                "http://21.144.196.204/v1.0/gr"
         };
-        final ITileSource tileSourceSat = new XYTileSource("MyCustomTilesS", 0, 20, 256, ".jpg",baseUrlS);
+        final ITileSource tileSourceSat = new MyXYTileSource("MyCustomTilesS", 0, 20, 256, ".jpg",baseUrlS);
         tileProviderSat.setTileSource(tileSourceSat);
         mapView.setTileProvider(tileProviderSat);
 
         //路网图
         final MapTileProviderBasic tileProviderRoute = new MapTileProviderBasic(context);
         String[] baseUrlR = {
-                "http://24.43.4.30:8000/MapTileDownload/tianditu/overlay_s/"
+//                "http://24.43.4.30:8000/MapTileDownload/tianditu/overlay_s/"
+                "http://21.144.196.204/v1.0/go"
         };
-        final ITileSource tileSourceRoute = new XYTileSource("MyCustomTilesR", 0, 20, 256, ".png",baseUrlR);
+        final ITileSource tileSourceRoute = new MyXYTileSource("MyCustomTilesR", 0, 20, 256, ".png",baseUrlR);
         tileProviderRoute.setTileSource(tileSourceRoute);
         final TilesOverlay tilesOverlayRoute = new TilesOverlay(tileProviderRoute, context);
         tilesOverlayRoute.setLoadingBackgroundColor(Color.TRANSPARENT);
